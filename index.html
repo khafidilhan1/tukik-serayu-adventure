@@ -362,7 +362,7 @@ function createPowerUp(){
     if (pRect.left<tukikRect.right&&pRect.right>tukikRect.left&&
         pRect.top<tukikRect.bottom&&pRect.bottom>tukikRect.top){
       if (type==='shield'){
-        hasShield=true; shieldDisplay.innerHTML='<img src="GAMBAR/perisai.png"> Aktif';
+        hasShield=true; shieldDisplay.innerHTML='<img src="perisai.png"> Aktif';
       } else { score+=100; scoreDisplay.textContent='Score: '+score; }
       p.remove(); clearInterval(move);
     }
