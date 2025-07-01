@@ -404,21 +404,22 @@ function createPowerUp(){
   }
 
   function countdownSequence(n, callback) {
-    countdown.style.display = 'block';
-    bgVideo.pause();
-    let current = n;
-    countdown.textContent = current;
-    let timer = setInterval(() => {
-      current--;
-      if (current > 0) countdown.textContent = current;
-      else {
-        clearInterval(timer);
-        countdown.style.display = 'none';
-        bgVideo.play();
-        callback();
-      }
-    }, 1000);
-  }
+  countdown.style.display = 'block';
+  bgVideo.pause();
+  let current = n;
+  countdown.innerHTML = `<div>${current}</div><div style="font-size:16px; margin-top:10px;">Gunakan tanda panah kanan dan kiri untuk menggerakkan Tukik</div>`;
+  let timer = setInterval(() => {
+    current--;
+    if (current > 0) {
+      countdown.innerHTML = `<div>${current}</div><div style="font-size:16px; margin-top:10px;">Gunakan tanda panah kanan dan kiri untuk menggerakkan Tukik</div>`;
+    } else {
+      clearInterval(timer);
+      countdown.style.display = 'none';
+      bgVideo.play();
+      callback();
+    }
+  }, 1000);
+}
   // <<< Selesai
 
   resetGame();
